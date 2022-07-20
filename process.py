@@ -67,8 +67,6 @@ def generate_tfidf_npz(path, data_name, all_word_dict, tfidf, all_tweet_idx):
         
         each_sample_ids = []
         x_x = []
-        x_user = []
-        x_stance = []
             
         with open(os.path.join(file_path, file), 'r', encoding = 'utf-8') as f: #each_graph_sample
             lines = f.readlines()
@@ -83,20 +81,7 @@ def generate_tfidf_npz(path, data_name, all_word_dict, tfidf, all_tweet_idx):
                 tfidf_idx = all_tweet_idx[tweet_id]  #The subscript of the tweet in tfidf
                 tfidf_tid = tfidf[tfidf_idx].toarray() #Representation of the tweet in tfidf
                 text_f = tfidf_tid.ravel()[:5000]
-                
-                user = user_f.split()
-                user = list(map(int, user))
-                #print(user)
-                
-                if stance == 'support':
-                    stance_label = 0
-                elif stance == 'query':
-                    stance_label = 1
-                elif stance == 'deny':
-                    stance_label = 2
-                else:
-                    stance_label = 3
-                    
+                     
                 if label == 'true':
                     rumor_label = 0
                 elif label == 'false':
@@ -107,16 +92,14 @@ def generate_tfidf_npz(path, data_name, all_word_dict, tfidf, all_tweet_idx):
                 
                 each_sample_ids.append(tweet_id)
                 x_x.append(text_f)
-                x_user.append(user)
-                x_stance.append(stance_label)
                 
         idx_map = {j: i for i, j in enumerate(each_sample_ids)} #map to 0-each_sample_num
         
         tree_file = os.path.join(tree_path, file)
         TD_edge_idx, BU_edge_idx = tree2edge_index(tree_file, idx_map)
-        x_x, x_user, x_stance, y = np.array(x_x), np.array(x_user), np.array(x_stance), np.array(rumor_label)
+        x_x, y = np.array(x_x), np.array(rumor_label)
         
-        np.savez(os.path.join(path, 'train_tfidfNPZ', file_id+'.npz'), x=x_x, x_user= x_user, x_stance=x_stance, edge_index=TD_edge_idx,
+        np.savez(os.path.join(path, 'train_tfidfNPZ', file_id+'.npz'), x=x_x, edge_index=TD_edge_idx,
                 BU_edge_index=BU_edge_idx, y=y)
                 
 
