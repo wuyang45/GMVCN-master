@@ -63,7 +63,6 @@ class GraphDataset(Dataset):
                  edge_index=torch.LongTensor(new_edgeindex),
                  BU_edge_index=torch.LongTensor(BUnew_edgeindex),
                  y=torch.LongTensor([int(data['y'])]),
-                 x_user=torch.tensor(data['x_user'], dtype=torch.float32),
                  udir_edge_index=torch.LongTensor(udirIndex),
                  sid = id.split('.')[0]
                 )
