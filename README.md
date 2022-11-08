@@ -1,5 +1,5 @@
 # GMVCN-master
-PyTorch implementation of "Exploring Graph-aware Multi-View Fusion for Rumor Detection on Social Media"
+PyTorch implementation of "[Exploring Graph-aware Multi-View Fusion for Rumor Detection on Social Media](https://2022.ecmlpkdd.org/wp-content/uploads/2022/09/sub_1399-b.pdf)"
 
 ## Datasets
 The two datasets we used are public datasets. You can obtain the data from corresponding official links.
