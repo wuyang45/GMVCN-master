@@ -21,3 +21,9 @@ The dataset supports stance classification (task A) and rumor detection (task B)
 - [ ] packaging==21.3
 - [ ] tabulate==0.8.9
 
+If you are insterested in this work, and want to use the codes or results in this repository, please star this repository and cite by:
+```
+@article{wuexploring,
+  title={Exploring Graph-aware Multi-View Fusion for Rumor Detection on Social Media},
+  author={Wu, Yang and Yang, Jing and Zhou, Xiaojun and Wang, Liming and Xu, Zhen}
+}
