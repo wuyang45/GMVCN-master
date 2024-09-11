@@ -1,5 +1,5 @@
 # GMVCN-master
-PyTorch implementation of "[Exploring Graph-aware Multi-View Fusion for Rumor Detection on Social Media](https://2022.ecmlpkdd.org/wp-content/uploads/2022/09/sub_1399-b.pdf)"
+PyTorch implementation of "Graph-Aware Multi-View Fusion for Rumor Detection on Social Media"
 
 ## Datasets
 The two datasets we used are public datasets. You can obtain the data from corresponding official links.
@@ -23,7 +23,11 @@ The dataset supports stance classification (task A) and rumor detection (task B)
 
 If you are insterested in this work, and want to use the codes or results in this repository, please star this repository and cite by:
 ```
-@article{wuexploring,
-  title={Exploring Graph-aware Multi-View Fusion for Rumor Detection on Social Media},
-  author={Wu, Yang and Yang, Jing and Zhou, Xiaojun and Wang, Liming and Xu, Zhen}
+@inproceedings{wu2024graph,
+  title={Graph-Aware Multi-View Fusion for Rumor Detection on Social Media},
+  author={Wu, Yang and Yang, Jing and Wang, Liming and Xu, Zhen},
+  booktitle={ICASSP 2024-2024 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={9961--9965},
+  year={2024},
+  organization={IEEE}
 }
